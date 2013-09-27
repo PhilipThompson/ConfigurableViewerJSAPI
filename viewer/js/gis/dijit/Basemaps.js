@@ -30,6 +30,24 @@ define([
 
     // define all valid custom basemaps here. Object of Basemap objects. Key name and basemap id must match. (pass desired basmaps in constructor in custom mode)
     var customBasemaps = {
+        osiMapGenieAerial: {
+            title: "OSi Map Genie Aerial",
+            basemap: new Basemap({
+                id: "osiMapGenieAerial",
+                layers: [new BasemapLayer({
+                    url: "https://webservices.osi.ie/ArcGIS/rest/services/webmercator/MapGenie_Ortho_WM/MapServer?token=xS675AT6-RK3stk_oA8P4kKV7Wun42jtHx4JuxLfKrOWHrQ_P-8RQ6jOVTSecUGO-vBY4x8Ys8Ygz9rzHnhwMA.."
+                })]
+            })
+        },
+        osiMapGenieTopo: {
+            title: "OSi Map Genie Topo",
+            basemap: new Basemap({
+                id: "osiMapGenieTopo",
+                layers: [new BasemapLayer({
+                    url: "https://webservices.osi.ie/ArcGIS/rest/services/webmercator/MapGenie_Basemap_WM/MapServer?token=xS675AT6-RK3stk_oA8P4kKV7Wun42jtHx4JuxLfKrOWHrQ_P-8RQ6jOVTSecUGO-vBY4x8Ys8Ygz9rzHnhwMA.."
+                })]
+            })
+        },
         street: {
             title: "Streets",
             basemap: new Basemap({

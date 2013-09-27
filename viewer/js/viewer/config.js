@@ -11,20 +11,21 @@ define([
 			url: "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
 		},
 		// basemapMode: must be either "agol" or "custom"
-		//basemapMode: "custom",
-		basemapMode: "agol",
+		basemapMode: "custom",
+		//basemapMode: "agol",
 		// defaultBasemap: valid options for "agol" mode: "streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"
-		//mapStartBasemap: "lightGray",
-		mapStartBasemap: "streets",
+		mapStartBasemap: "osiMapGenieTopo",
+		//mapStartBasemap: "streets",
 		//basemapsToShow: basemaps to show in menu. If "agol" mode use valid values from above, if "custom" mode then define in basmaps dijit and refrenc by name here
-		//basemapsToShow: ["street", "satellite", "hybrid", "satTrans", "lightGray"],
-		basemapsToShow: ["streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"],
+		//basemapsToShow: ["lightGray"],
+        basemapsToShow: ["osiMapGenieTopo", "osiMapGenieAerial", "street", "satellite", "hybrid", "satTrans", "lightGray"],
+		//basemapsToShow: ["streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"],
 		// initialExtent: extent the the map starts at. Helper tool: http://www.arcgis.com/home/item.html?id=dd1091f33a3e4ecb8cd77adf3e585c8a
 		initialExtent: {
-			xmin: -15489130.48708616,
-			ymin: 398794.4860580916,
-			xmax: -5891085.7193757,
-			ymax: 8509680.431452557,
+			xmin:-709775.1353988869,
+            ymin:7046442.998752477,
+            xmax:-699771.4393220779,
+            ymax:7052796.826728674,
 			spatialReference: {
 				wkid: 102100
 			}
@@ -32,22 +33,22 @@ define([
 		// operationalLayers: Layers to load on top of the basemap: valid 'type' options: "dynamic", "tiled", "feature".
 		// 'options' object is passed as the layers options for constructor. Title will be used in the legend only. id's must be unique and have no spaces.
 		// 3 'mode' options: MODE_SNAPSHOT = 0, MODE_ONDEMAND = 1, MODE_SELECTION = 2
-		operationalLayers: [{
-			type: "feature",
-			url: "http://psstldemo3.esri.com/arcgis/rest/services/demo/MeetUpHomeTowns/FeatureServer/0",
-			title: "STLJS Meetup Home Towns",
-			options: {
-				id: "meetupHometowns",
-				opacity: 1.0,
-				visible: true,
-				outFields: ["*"],
-				infoTemplate: new InfoTemplate("Hometown", "${*}"),
-				mode: 0
-			},
-			editorLayerInfos: {
-				disableGeometryUpdate: false
-			}
-		}],
+//		operationalLayers: [{
+//			type: "feature",
+//			url: "http://services.arcgis.com/pMnvm7HXxTmNXxGi/arcgis/rest/services/PhoenixParkExits/FeatureServer/0",
+//			title: "Phoenix Park concerts exits",
+//			options: {
+//				id: "exits",
+//				opacity: 1.0,
+//				visible: true,
+//				outFields: ["*"],
+//				infoTemplate: new InfoTemplate("Exits", "${*}"),
+//				mode: 0
+//			},
+//			editorLayerInfos: {
+//				disableGeometryUpdate: false
+//			}
+//		}],
 		//widgets: set include to true or false to load or not load the widget. set position to the desired order, starts at 0 on the top.
 		widgets: {
 			legend: {
